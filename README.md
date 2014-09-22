@@ -1,4 +1,4 @@
-PGHCI-Privacy-Study
-===================
+WellesleyHCI-PGP
+================
 
-PGHCI Privacy Study
+Test files for the new WellesleyHCI PGP website

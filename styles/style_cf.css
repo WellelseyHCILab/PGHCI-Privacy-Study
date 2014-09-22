@@ -1,0 +1,74 @@
+/*
+style_cf.css
+Claire A. Cerda (edited by PGP team summer 2014)
+for Wellesley College HCI Lab
+*/
+
+/* navbar */
+#study_wrapper {
+	margin-top:60px;
+}
+
+/* text */
+
+#text {
+	font-size: 16px;
+	margin-top: 60px;
+	text-align: justify;
+}
+
+#body{
+	width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+h2 {
+	color: #007fff;
+}
+
+/* table */
+
+table {
+  border-collapse: collapse;
+  width: 900px;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+tr, td, th {
+  border: 1px solid #999;
+  padding: 0.5rem;
+}
+
+th {
+	text-align: center;
+}
+
+td {
+	height: 150px;
+	width: 27%;
+	text-align: left;
+	vertical-align: top;
+}
+
+.first_column {
+	font-weight: bold;
+	vertical-align: middle;
+	width: 10%;
+}
+
+.risks {
+	color: red;
+	font-weight: bold;
+}
+
+.benefits {
+	color:#007fff;
+	font-weight: bold;
+}
+
+.hover {
+  background: #E0E0E0;
+}
