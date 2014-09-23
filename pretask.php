@@ -118,7 +118,7 @@ if ($pretaskID!= null) {
 	<!-- BEGIN QUIZ QUESTIONS -->
 
 	<h2>Questions about personal genomics</h2>
-	<form id="pretask" method="POST" action="pretask_process.php">
+	<form id="pretask" method="POST" action="v1.php">
 	<!-- INCLUDE FORWARD / BACK BUTTONS LATER -->
 
 	<ol><li><b>True or False: Your genes determine everything about you and your future.</b><br>

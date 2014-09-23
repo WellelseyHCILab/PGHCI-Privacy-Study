@@ -71,7 +71,7 @@ $_SESSION['mturk_id'] = $mturk_id;*/
 	</div>
 	
 	<div class="container" id="study_wrapper">
-	<form id="demo_form" method="POST" action=/~hcilab/pghci_NEW/dem_process><ol> <!--CHECK THIS, J.-->
+	<form id="demo_form" method="POST" action=/~hcilab/pghci_privacy/PGHCI-Privacy-Study/pretask.php><ol> <!--CHECK THIS, J.-->
 				
 		<h2>Online Privacy Attitude &amp; Behavior Survey</h2>
 		<p>For this part of the survey, we are interested in any privacy concerns you might have when online. Please answer every question using the full scale provided.

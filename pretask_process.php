@@ -43,12 +43,12 @@ if (!empty($_POST)) {
 		//}
 
 	// Redirect user to a random visualization
-	$num = mt_rand(1,4); //documented php function
-	$header = "Location: http://cs.wellesley.edu/~hcilab/pghci_NEW/";
-	if ($num == 1) { $header = $header . "v1.php"; }
+	//$num = mt_rand(1,4); //documented php function
+	$header = "Location: http://cs.wellesley.edu/~hcilab/pghci_privacy/PGHCI-Privacy-Study/v1.php";
+	/*if ($num == 1) { $header = $header . "v1.php"; }
 	else if ($num == 2) { $header = $header . "v2.php"; }
 	else if ($num == 3) { $header = $header . "v3.php"; }
-	else { $header = $header . "v4.php"; }
+	else { $header = $header . "v4.php"; }*/
    	header($header); //redirects user
 	exit();
 }
