@@ -77,7 +77,7 @@ $_SESSION['mturk_id'] = $mturk_id;*/
 		<p>For this part of the survey, we are interested in any privacy concerns you might have when online. Please answer every question using the full scale provided.
 		
 		<h3>Part 3</h3>
-		<ol>
+		<ol start = "13">
 		<li><p><strong>In general, how concerned are you about your privacy while you are using the internet?</strong></p></li>
 			<label for="q13_never">
 				<input id="q13_nc" type="radio" name="q13" required value="not"> Not at all concerned

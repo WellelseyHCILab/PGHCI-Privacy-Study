@@ -70,7 +70,7 @@ if (!empty($_POST)) {
 		//}
 
 	// Redirect user to demographics page
-	$header = "Location: http://cs.wellesley.edu/~hcilab/pghci_privacy/PGHCI-Privacy-Study/pgp_consentTask.html";
+	$header = "Location: http://cs.wellesley.edu/~hcilab/pghci_privacy/PGHCI-Privacy-Study/pgp_consentTask.php";
    	header($header); //redirects user
 	exit();
 }

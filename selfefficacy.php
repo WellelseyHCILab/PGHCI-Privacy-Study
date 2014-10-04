@@ -74,7 +74,7 @@ $_SESSION['mturk_id'] = $mturk_id;*/
 	<form id="demo_form" method="POST" action=/~hcilab/pghci_privacy/PGHCI-Privacy-Study/pretask.php><ol> <!--CHECK THIS, J.-->
 				
 		<h2>General Self Efficacy Survey</h2>
-		<p>For this part of the survey, we are interested ??????????</p>
+		<p>Prompt: For this part of the survey we are interested in how you perceive your own effectiveness. Please answer every question using the full scale provided.</p>
 		<ol>
 
 		<li><p><strong>I can always manage to solve difficult problems if I try hard enough.</strong></p></li>

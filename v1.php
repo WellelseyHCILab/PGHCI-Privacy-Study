@@ -154,44 +154,44 @@
 			<h2>Questions About the Report</h2>
 				<p>Please answer the following questions based on Jamie's report. Feel free to <strong>revisit the report</strong> as needed in order to answer the questions correctly.</p>
 				<form action="vis_process.php" method="post" id="v1_q">
-	
+				
 					<label for="v1_q1"><strong>The number of variants with high clinical importance:</strong></label>
 					<input type="text" name="v1_q1" id="v1_q1">
-					
-					<label for="v1_q2"><strong>The number of variants that are well-established pathogenic:</strong></label>
-					<input type="text" name="v1_q2" id="v1_q2">
-
-					<label for="v1_q3"><strong>Based on the information above, the number of variants in Jamie's report with low clinical importance is <span id="v1_q3text">________</span> the number of variants with high clinical importance.</strong></label>
-					<label class="radio" for="v1_q3_A">
-						<input type="radio" name="v1_q3" id="v1_q3_A" value="greater" onchange="changetext(this.name, this.value);">Greater than
-					</label>
-					<label class="radio" for="v1_q3_B">
-						<input type="radio" name="v1_q3" id="v1_q3_B" value="equal" onchange="changetext(this.name, this.value);">Equal
-					</label>
-					<label class="radio" for="v1_q3_C">
-						<input type="radio" name="v1_q3" id="v1_q3_C" value="less" onchange="changetext(this.name, this.value);">Less than
-					</label>
-					<label class="radio" for="v1_q3_D">
-						<input type="radio" name="v1_q3" id="v1_q3_D" value="dunno" onchange="changetext(this.name, this.value);">I don't know
-					</label>
-
 			
-					<label for="v1_q4"><strong>Based on the information above, the number of uncertain pathogenic variants in Jamie's report is <span id="v1_q4text">________</span> the number of well established pathogenic variants.</strong></label>
+					<label for="v1_q2"><strong>Based on the information above, the number of uncertain pathogenic variants in Jamie's report is <span id="v1_q2text">________</span> the number of well established pathogenic variants.</strong></label>
+					<label class="radio" for="v1_q2_A">
+						<input type="radio" name="v1_q2" id="v1_q2_A" value="greater" onchange="changetext(this.name, this.value);">Greater than
+					</label>
+					<label class="radio" for="v1_q2_B">
+						<input type="radio" name="v1_q2" id="v1_q2_B" value="equal" onchange="changetext(this.name, this.value);">Equal
+					</label>
+					<label class="radio" for="v1_q2_C">
+						<input type="radio" name="v1_q2" id="v1_q2_C" value="less" onchange="changetext(this.name, this.value);">Less than
+					</label>
+					<label class="radio" for="v1_q2_D">
+						<input type="radio" name="v1_q2" id="v1_q2_D" value="dunno" onchange="changetext(this.name, this.value);">I don't know
+					</label>
+
+					<p><strong>Which variants would Jamie be most likely to discuss with a healthcare provider?</strong>
+					<textarea name="v1_q3" id="v1_q3" cols="30" rows="5"></textarea>
+					
+					
+
+					<p><strong>Based on the information above, Jamie's risk of developing stomach flu is <span id="v1_q4text">________</span> the average person.</strong>
 					<label class="radio" for="v1_q4_A">
 						<input type="radio" name="v1_q4" id="v1_q4_A" value="greater" onchange="changetext(this.name, this.value);">Greater than
 					</label>
 					<label class="radio" for="v1_q4_B">
 						<input type="radio" name="v1_q4" id="v1_q4_B" value="equal" onchange="changetext(this.name, this.value);">Equal
 					</label>
-					<label class="radio" for="v1_q4_C">
+					<label class="radio" for="v1_q7_C">
 						<input type="radio" name="v1_q4" id="v1_q4_C" value="less" onchange="changetext(this.name, this.value);">Less than
 					</label>
 					<label class="radio" for="v1_q4_D">
 						<input type="radio" name="v1_q4" id="v1_q4_D" value="dunno" onchange="changetext(this.name, this.value);">I don't know
 					</label>
 
-					<p><strong>Based on the information above, the number of potentially pathogenic variants in Jamie's report is <span id="v1_q5text">________</span> the number of potentially benign or protective variants.</strong></p>
-					
+					<p><strong>Based on the information above, Jamie's risk of developing age-related macular degeneration is <span id="v1_q5text">________</span> the average person?</strong>
 					<label class="radio" for="v1_q5_A">
 						<input type="radio" name="v1_q5" id="v1_q5_A" value="greater" onchange="changetext(this.name, this.value);">Greater than
 					</label>
@@ -205,156 +205,23 @@
 						<input type="radio" name="v1_q5" id="v1_q5_D" value="dunno" onchange="changetext(this.name, this.value);">I don't know
 					</label>
 
-
-					<p><strong>Which variants would Jamie be most likely to discuss with a healthcare provider?</strong>
-					<textarea name="v1_q6" id="v1_q6" cols="30" rows="5"></textarea>
-					
-					
-
-					<p><strong>Based on the information above, Jamie's risk of developing stomach flu is <span id="v1_q7text">________</span> the average person.</strong>
-					<label class="radio" for="v1_q7_A">
-						<input type="radio" name="v1_q7" id="v1_q7_A" value="greater" onchange="changetext(this.name, this.value);">Greater than
-					</label>
-					<label class="radio" for="v1_q7_B">
-						<input type="radio" name="v1_q7" id="v1_q7_B" value="equal" onchange="changetext(this.name, this.value);">Equal
-					</label>
-					<label class="radio" for="v1_q7_C">
-						<input type="radio" name="v1_q7" id="v1_q7_C" value="less" onchange="changetext(this.name, this.value);">Less than
-					</label>
-					<label class="radio" for="v1_q7_D">
-						<input type="radio" name="v1_q7" id="v1_q7_D" value="dunno" onchange="changetext(this.name, this.value);">I don't know
-					</label>
-
-					<p><strong>Based on the information above, Jamie's risk of developing age-related macular degeneration is <span id="v1_q8text">________</span> the average person?</strong>
-					<label class="radio" for="v1_q8_A">
-						<input type="radio" name="v1_q8" id="v1_q8_A" value="greater" onchange="changetext(this.name, this.value);">Greater than
-					</label>
-					<label class="radio" for="v1_q8_B">
-						<input type="radio" name="v1_q8" id="v1_q8_B" value="equal" onchange="changetext(this.name, this.value);">Equal
-					</label>
-					<label class="radio" for="v1_q8_C">
-						<input type="radio" name="v1_q8" id="v1_q8_C" value="less" onchange="changetext(this.name, this.value);">Less than
-					</label>
-					<label class="radio" for="v1_q8_D">
-						<input type="radio" name="v1_q8" id="v1_q8_D" value="dunno" onchange="changetext(this.name, this.value);">I don't know
-					</label>
-
 					<p><strong>If you were Jamie, knowing this information, which of the following conditions would you be interested in learning more about? Select all that apply.</strong>
-<input type="hidden" name="q9a">
-	  <label><input type="checkbox" name="q9a"  value="alzheimers">Alzheimer's</label>
-			<input type="hidden" name="q9b">
-			<label><input type="checkbox" name="q9b"  value="parkinsons">Parkinson's</label>
-	  <input type="hidden" name="q9c">
-	  <label><input type="checkbox" name="q9c"  value="liver">Liver Disease</label>
-	  <input type="hidden" name="q9d">
-	  <label><input type="checkbox" name="q9d"  value="colon">Colon Cancer</label>
-	  <input type="hidden" name="q9e">
-	  <label><input type="checkbox" name="q9e"  value="diabetes">Diabetes</label>
-	  <input type="hidden" name="q9f">
-	  <label><input type="checkbox" name="q9f"  value="emphysema">Emphysema</label>
-	  <input type="hidden" name="q9g">
-	  <label><input type="checkbox" name="q9g"  value="tuberculosis">Tubercolosis</label>
-	  <input type="hidden" name="q9h">
-	  <label><input type="checkbox" name="q9h"  value="eye">Eye Disease</label>
-
-
-					<table class="table table-bordered table-striped table-hover" style="font-size:14px;">
-						<thead>
-							<tr>
-								<th style="width:80px;"><strong>Statement</strong></th>
-								<th style="width:80px;"><strong>Strongly disagree</strong></th>
-								<th style="width:80px;"><strong>Disagree</strong></th>
-								<th style="width:80px;"><strong>Somewhat disagree</strong></th>
-								<th style="width:80px;"><strong>Neither agree or disagree</strong></th>
-								<th style="width:80px;"><strong>Somewhat agree</strong></th>
-								<th style="width:80px;"><strong>Agree</strong></th>
-								<th style="width:80px;"><strong>Strongly agree</strong></th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>The information in the report was presented in an accessible manner.</td>
-								<td><input type="radio" name="v1_q10_a" value="1"></td>
-								<td><input type="radio" name="v1_q10_a" value="2"></td>
-								<td><input type="radio" name="v1_q10_a" value="3"></td>
-								<td><input type="radio" name="v1_q10_a" value="4"></td>
-								<td><input type="radio" name="v1_q10_a" value="5"></td>
-								<td><input type="radio" name="v1_q10_a" value="6"></td>
-								<td><input type="radio" name="v1_q10_a" value="7"></td>
-							</tr>
-							<tr>
-								<td>The report is easy to understand.</td>
-								<td><input type="radio" name="v1_q10_b" value="1"></td>
-								<td><input type="radio" name="v1_q10_b" value="2"></td>
-								<td><input type="radio" name="v1_q10_b" value="3"></td>
-								<td><input type="radio" name="v1_q10_b" value="4"></td>
-								<td><input type="radio" name="v1_q10_b" value="5"></td>
-								<td><input type="radio" name="v1_q10_b" value="6"></td>
-								<td><input type="radio" name="v1_q10_b" value="7"></td>
-							</tr>
-							<tr>
-								<td>Jamie's genes determine everything about them and their future.</td>
-								<td><input type="radio" name="v1_q10_c" value="1"></td>
-								<td><input type="radio" name="v1_q10_c" value="2"></td>
-								<td><input type="radio" name="v1_q10_c" value="3"></td>
-								<td><input type="radio" name="v1_q10_c" value="4"></td>
-								<td><input type="radio" name="v1_q10_c" value="5"></td>
-								<td><input type="radio" name="v1_q10_c" value="6"></td>
-								<td><input type="radio" name="v1_q10_c" value="7"></td>
-							</tr>
-							<tr>
-								<td>I would need the help of a healthcare professional to better understand Jamie's results.</td>
-								<td><input type="radio" name="v1_q10_d" value="1"></td>
-								<td><input type="radio" name="v1_q10_d" value="2"></td>
-								<td><input type="radio" name="v1_q10_d" value="3"></td>
-								<td><input type="radio" name="v1_q10_d" value="4"></td>
-								<td><input type="radio" name="v1_q10_d" value="5"></td>
-								<td><input type="radio" name="v1_q10_d" value="6"></td>
-								<td><input type="radio" name="v1_q10_d" value="7"></td>
-							</tr>
-							<tr>
-								<td>The scientific knowledge used to generate this report is well established.</td>
-								<td><input type="radio" name="v1_q10_e" value="1"></td>
-								<td><input type="radio" name="v1_q10_e" value="2"></td>
-								<td><input type="radio" name="v1_q10_e" value="3"></td>
-								<td><input type="radio" name="v1_q10_e" value="4"></td>
-								<td><input type="radio" name="v1_q10_e" value="5"></td>
-								<td><input type="radio" name="v1_q10_e" value="6"></td>
-								<td><input type="radio" name="v1_q10_e" value="7"></td>
-							</tr>
-							<tr>
-								<td>If I were Jamie, I would discuss the results in the report with my doctor.</td>
-								<td><input type="radio" name="v1_q10_f" value="1"></td>
-								<td><input type="radio" name="v1_q10_f" value="2"></td>
-								<td><input type="radio" name="v1_q10_f" value="3"></td>
-								<td><input type="radio" name="v1_q10_f" value="4"></td>
-								<td><input type="radio" name="v1_q10_f" value="5"></td>
-								<td><input type="radio" name="v1_q10_f" value="6"></td>
-								<td><input type="radio" name="v1_q10_f" value="7"></td>
-							</tr>
-						
-	
-							<tr>
-								<td>The report gives me a firm grasp of Jamie's health and biology.</td>
-								<td><input type="radio" name="v1_q10_g" value="1"></td>
-								<td><input type="radio" name="v1_q10_g" value="2"></td>
-								<td><input type="radio" name="v1_q10_g" value="3"></td>
-								<td><input type="radio" name="v1_q10_g" value="4"></td>
-								<td><input type="radio" name="v1_q10_g" value="5"></td>
-								<td><input type="radio" name="v1_q10_g" value="6"></td>
-								<td><input type="radio" name="v1_q10_g" value="7"></td>
-							</tr>
-							
-						</tbody>
-					</table>
-					
-					<label for="v1_q11">Please use the space below to tell us which features were most helpful for understanding the report.</label>
-					<textarea name="v1_q11" id="v1_q11" cols="30" rows="5"></textarea>
-					
-
-					<label for="v1_q12">Please use the space below to tell us how we can improve the report to make it easier to understand.</label>
-					<textarea name="v1_q12" id="v1_q12" cols="30" rows="5"></textarea>
-					
+					<input type="hidden" name="q6a">
+						  <label><input type="checkbox" name="q6a"  value="alzheimers">Alzheimer's</label>
+								<input type="hidden" name="q6b">
+								<label><input type="checkbox" name="q6b"  value="parkinsons">Parkinson's</label>
+						  <input type="hidden" name="q6c">
+						  <label><input type="checkbox" name="q6c"  value="liver">Liver Disease</label>
+						  <input type="hidden" name="q6d">
+						  <label><input type="checkbox" name="q6d"  value="colon">Colon Cancer</label>
+						  <input type="hidden" name="q6e">
+						  <label><input type="checkbox" name="q6e"  value="diabetes">Diabetes</label>
+						  <input type="hidden" name="q6f">
+						  <label><input type="checkbox" name="q6f"  value="emphysema">Emphysema</label>
+						  <input type="hidden" name="q6g">
+						  <label><input type="checkbox" name="q6g"  value="tuberculosis">Tubercolosis</label>
+						  <input type="hidden" name="q6h">
+						  <label><input type="checkbox" name="q6h"  value="eye">Eye Disease</label>
 					
 					
 				<input class="btn btn-primary submit-survey" type="submit" name="Submit" value="Continue" id="Submit_v1">
