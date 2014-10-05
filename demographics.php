@@ -75,19 +75,24 @@ $_SESSION['mturk_id'] = $mturk_id;*/
 				
 		<h2>Demographic Questions</h2>
 		
-		<label for="age"> <strong>How old are you?</strong> </label>
-		<input type="number" name="q1" id="age" style="height:30px;" required>
 		<p><strong>What is your gender?</strong></p>
-			<label for="q2_F">
-				<input id="q2_F" type="radio" name="q2" required value="female"> Female
+			<label for="q1_F">
+				<input id="q1_F" type="radio" name="q1" required value="female"> Female
 			</label>
-			<label for="q2_M">
-				<input id="q2_M" type="radio" name="q2" value="male"> Male
+			<label for="q1_M">
+				<input id="q1_M" type="radio" name="q1" value="male"> Male
 			</label>
-			<label for="q2_O">
-				<input id="q2_O" type="radio" name="q2" value="other"> Other
+			<label for="q1_O">
+				<input id="q1_O" type="radio" name="q1" value="other"> Other
 			</label>
-		<p><strong>Education:</strong></p>
+			<label for="q1_No">
+				<input id="q1_No" type="radio" name="q1" value="no_answer">I prefer not to answer
+			</label>
+
+		<label for="age"> <strong>How old are you?</strong> </label>
+		<input type="number" name="q2" id="age" style="height:30px;" required>
+
+		<p><strong>Highest level of education:</strong></p>
 			<select name="q3">
 				<option value="some high-school">Some high-school</option>
 				<option value="high-school diploma">High-school diploma</option>
@@ -103,35 +108,17 @@ $_SESSION['mturk_id'] = $mturk_id;*/
 			<label for="q4_N">
 				<input id="q4_N" type="radio" name="q4" value="no"> No
 			</label>
-		<p><strong>Did you study life sciences at a collegiate or higher level?</strong></p>
+		<p><strong>Did you study life sciences at a college level?</strong></p>
 			<label for="q5_Y">
 				<input id="q5_Y" type="radio" name="q5" required value="yes"> Yes
 			</label>
 			<label for="q5_N">
 				<input id="q5_N" type="radio" name="q5" value="no"> No
 			</label>
-		<p><strong>Are you colorblind?</strong></p>
-			<label for="q6_yes">
-				<input id="q6_yes" type="radio" name="q6" required value="yes"> Yes
-			</label>
-			<label for="q6_no">
-				<input id="q6_no" type="radio" name="q6" value="no"> No
-			</label>				
-                        <label for="q6_dunno">
-				<input id="q6_dunno" type="radio" name="q6" value="dunno"> I don't know
-			</label>
-		<p><strong>Did you have trouble distinguishing between the red and blue used in this study?</strong></p>
-			<label for="q7_not_able">
-				<input id="q7_not_able" type="radio" name="q7" required value="not_able"> I was not able to distinguish between the red and blue in this study
-			</label>
-			<label for="q7_yes_able">
-				<input id="q7_yes_able" type="radio" name="q7" value="yes_able"> I had no trouble distinguishing between the red and blue in this study
-			</label>				
-                        <label for="q7_dunno">
-				<input id="q7_dunno" type="radio" name="q7" value="dunno"> I don't know
-			</label>
-	
 		
+		<label for="language"> <strong>What is your native language?</strong> </label>
+		<input type="textfield" name="q6" id="language" style="height:30px;" required>
+		<p></p>
 		<input type="submit" name="submit" value="Submit" id="submit_demog" class="btn btn-primary submit-survey">
 		</ol></form>
 	</div>
