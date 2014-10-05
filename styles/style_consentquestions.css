@@ -1,0 +1,58 @@
+	#consentFormText {
+    padding: 10px;
+    height: 1000px;
+  }
+  .ui-state-highlight{
+    border: 1px solid #007fff; 
+    background: #fff;
+  }
+  #rankColumnLabel{
+    float:center;
+    color: #fff;
+    text-align: center;
+    background: #007fff;
+  }
+  #unrankedColumnLabel{
+    float:center;
+    text-align: center;
+  }
+  #unranked_q10, #unranked_q9 {
+     
+    width: 280px;
+    height: 555px;
+    padding: 5px;
+    float: center;
+    list-style-type: none;
+  }
+  #ranked_q10, #ranked_q9 {
+    border: 1px solid #999999;
+    width: 280px;
+    height: 555px;
+    padding: 5px;
+    padding-left: 20px;
+    float: center;
+    margin-left: 0px;
+  }
+  #ranked_q10, #unranked_q10{
+  	height: 325px;
+  }
+
+  #ranked_q10 li, #unranked_q10 li, #ranked_q9 li, #unranked_q9 li{
+    margin: 0 5px 5px 5px;
+    padding: 5px;
+    width: 250px;
+  }
+  #sortable_rank
+  {
+    min-height: 20px;
+    margin: 0;
+    padding: 5px 0 0 0;
+    float: right;
+    margin-left: 5px;
+  }
+  #sortable_rank li
+  {
+     margin: 5px;
+    padding: 5px;
+  }
+  
