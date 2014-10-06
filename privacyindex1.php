@@ -1,40 +1,13 @@
 <?php
-	session_start();
-	error_reporting(E_ERROR);
-
-        $_SESSION['demograph_start_time'] = time(); //start timer
-/*   
-        //generate random code for the thankyou page
-		function randomCode($length = 5) {
-   			    $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-   			    $code = '';
-   			    for ($i = 0; $i < $length; $i++) {
-    			   $code .= $chars[rand(0, strlen($chars) - 1)];
-    		    }
-   			    return $code;
-		}
-
-		//array to hold random codes without duplicates (up to 1000 elements)
-		$total = 0;
-		$allCodes = array();
-		while($total < 1000) {
-  			 for ($i=0; $i < 1000 - $total; $i++ ) {
-    			 $allCodes[] = "code-" . randomCode();
-    		 }
-    		 $allCodes = array_unique($allCodes);
-    		 $total = count($allCodes);
-        }
-
-//Make sure no duplicate mturk ids
+session_start();
 require_once('pgp_functions.php');
 $dbh;
 localConn(); //establish connection
 
-$mturk_id = randomCode();
-while (mturk_id_exists($mturk_id)) {
-  $mturk_id = randomCode();
-}
-$_SESSION['mturk_id'] = $mturk_id;*/
+$uid = new_user(); // helper function from pgp_function.php
+$_SESSION["user"] = $uid;
+
+$_SESSION['pi1_start_time'] = time(); //start timer
         
 ?>
 
@@ -71,7 +44,7 @@ $_SESSION['mturk_id'] = $mturk_id;*/
 	</div>
 	
 	<div class="container" id="study_wrapper">
-	<form id="demo_form" method="POST" action=/~hcilab/pghci_privacy/PGHCI-Privacy-Study/privacyindex2.php><ol> <!--CHECK THIS, J.-->
+	<form id="demo_form" method="POST" action="pi1_process.php"><ol> <!--CHECK THIS, J.-->
 				
 		<h2>Online Privacy Attitude &amp; Behavior Survey</h2>
 		<p>For the first part of the survey, we are interested in your privacy related behavior in general and when online. Please answer every question using the full scale provided.

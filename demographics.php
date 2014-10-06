@@ -3,38 +3,6 @@
 	error_reporting(E_ERROR);
 
         $_SESSION['demograph_start_time'] = time(); //start timer
-/*   
-        //generate random code for the thankyou page
-		function randomCode($length = 5) {
-   			    $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-   			    $code = '';
-   			    for ($i = 0; $i < $length; $i++) {
-    			   $code .= $chars[rand(0, strlen($chars) - 1)];
-    		    }
-   			    return $code;
-		}
-
-		//array to hold random codes without duplicates (up to 1000 elements)
-		$total = 0;
-		$allCodes = array();
-		while($total < 1000) {
-  			 for ($i=0; $i < 1000 - $total; $i++ ) {
-    			 $allCodes[] = "code-" . randomCode();
-    		 }
-    		 $allCodes = array_unique($allCodes);
-    		 $total = count($allCodes);
-        }
-
-//Make sure no duplicate mturk ids
-require_once('pgp_functions.php');
-$dbh;
-localConn(); //establish connection
-
-$mturk_id = randomCode();
-while (mturk_id_exists($mturk_id)) {
-  $mturk_id = randomCode();
-}
-$_SESSION['mturk_id'] = $mturk_id;*/
         
 ?>
 
@@ -71,7 +39,7 @@ $_SESSION['mturk_id'] = $mturk_id;*/
 	</div>
 	
 	<div class="container" id="study_wrapper">
-	<form id="demo_form" method="POST" action=/~hcilab/pghci_NEW/dem_process><ol>
+	<form id="demo_form" method="POST" action="dem_process.php"><ol>
 				
 		<h2>Demographic Questions</h2>
 		

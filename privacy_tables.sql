@@ -3,7 +3,9 @@
 use pghci_privacy;
 
 drop table if exists users;
-drop table if exists privacy_index;
+drop table if exists privacy_index1;
+drop table if exists privacy_index2;
+drop table if exists privacy_index3;
 drop table if exists efficacy_scale;
 drop table if exists pretaskQ;
 drop table if exists visQ;
@@ -13,7 +15,9 @@ drop table if exists demographics;
 -- create the user table
 create table users(
 	id varchar(50) not null primary key,
-	pi_id int not null, -- privacy index
+	pi1_id int not null, -- privacy index
+	pi2_id int not null,
+	pi3_id int not null,
 	es_id int not null, -- efficacy scale
 	pretask_id int not null, -- pretask questions
 	vis_id int not null, -- vis questions
@@ -24,10 +28,38 @@ create table users(
 	)
 	ENGINE = InnoDB;
 
--- create the privacy index table
-create table privacy_index(
+-- create the 1st privacy index table
+create table privacy_index1(
+	pi1_id int auto_increment not null primary key,
 	user_id varchar(50) not null,
-	pi_id int auto_increment not null primary key,
+	q1 varchar(20) not null,
+	q2 varchar(20) not null,
+	q3 varchar(20) not null,
+	q4 varchar(20) not null,
+	q5 varchar(20) not null,
+	q6 varchar(20) not null,
+	total_time int not null
+	)
+	ENGINE = InnoDB;
+
+-- create the 2nd privacy index table
+create table privacy_index2(
+	pi2_id int auto_increment not null primary key,
+	user_id varchar(50) not null,
+	q1 varchar(20) not null,
+	q2 varchar(20) not null,
+	q3 varchar(20) not null,
+	q4 varchar(20) not null,
+	q5 varchar(20) not null,
+	q6 varchar(20) not null,
+	total_time int not null
+	)
+	ENGINE = InnoDB;
+
+-- create the 3rd privacy index table
+create table privacy_index3(
+	pi3_id int auto_increment not null primary key,
+	user_id varchar(50) not null,
 	q1 varchar(20) not null,
 	q2 varchar(20) not null,
 	q3 varchar(20) not null,
@@ -44,26 +76,14 @@ create table privacy_index(
 	q14 varchar(20) not null,
 	q15 varchar(20) not null,
 	q16 varchar(20) not null,
-	q17 varchar(20) not null,
-	q18 varchar(20) not null,
-	q19 varchar(20) not null,
-	q20 varchar(20) not null,
-	q21 varchar(20) not null,
-	q22 varchar(20) not null,
-	q23 varchar(20) not null,
-	q24 varchar(20) not null,
-	q25 varchar(20) not null,
-	q26 varchar(20) not null,
-	q27 varchar(20) not null,
-	q28 varchar(20) not null,
 	time_spent int 
 	)
 	ENGINE = InnoDB;
 
 -- create the efficacy scale table
 create table efficacy_scale(
-	user_id varchar(50) not null,
 	es_id int auto_increment not null primary key,
+	user_id varchar(50) not null,
 	q1 varchar(20) not null,
 	q2 varchar(20) not null,
 	q3 varchar(20) not null,
@@ -80,8 +100,8 @@ create table efficacy_scale(
 
 -- create the tutorial table
 create table pretaskQ(
+	pretask_id int auto_increment not null primary key,
 	user_id varchar(50) not null,
-	tutorial_id int auto_increment not null primary key,
 	q1 enum('true','false') not null,
 	q2 enum('10','50','99') not null,
 	q3 enum('true','false') not null,
@@ -94,8 +114,8 @@ create table pretaskQ(
 
 -- create the vis table
 create table visQ(
-	user_id varchar(50) not null,
 	vis_id int auto_increment not null primary key,
+	user_id varchar(50) not null,
 	vis_type varchar(20), -- do we still want the type?
 	q1 int not null,
 	q2 varchar(20) not null,
@@ -116,8 +136,8 @@ create table visQ(
 
 -- create the privacy table
 create table privacyQ(
-        user_id varchar(50) not null,
 	privacy_id int auto_increment not null primary key,
+        user_id varchar(50) not null,
 	signature enum('authorize','decline') not null,
 	explanation varchar(1000) not null,
 	q1 enum('true','false') not null,
@@ -170,8 +190,8 @@ create table privacyQ(
 
 -- create the demographics table
 create table demographics(
-	user_id varchar(50) not null,
 	dem_id int auto_increment not null primary key,
+	user_id varchar(50) not null,
 	q1 enum('female','male','other'),
 	q2 int,
 	q3 char(20),
@@ -181,3 +201,4 @@ create table demographics(
 	time_spent int
 	)
 	ENGINE = InnoDB;
+

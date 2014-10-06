@@ -1,7 +1,7 @@
 <!--
 Joanna Bi
 Wellesley HCI PGP
-SUMMER 2014
+FALL 2014
 -->
 
 <!-- Input user visualization response into database -->
@@ -19,7 +19,7 @@ localConn(); //establish connection
 // Add row to NEW_VIS table
 function add_vis_row($userResponse) {
 	global $dbh;
-	$query = "INSERT INTO NEW_VIS VALUES (DEFAULT,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+	$query = "INSERT INTO NEW_VIS VALUES (DEFAULT,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 	return $result = prepared_query($dbh, $query, $userResponse);
 }
 

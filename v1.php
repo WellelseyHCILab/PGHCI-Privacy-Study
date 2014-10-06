@@ -9,11 +9,8 @@
 	v1.php
 	2/21/14
 	Second visualization test for personal genomic project user test
-	Nicole Francisco, Kara Lu
 	for Wellesley College HCI Lab
 
-
-	5 June 2014
 -->
 <!DOCTYPE>
 <html>

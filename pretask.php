@@ -6,31 +6,9 @@ SUMMER 2014
 
 <?php
 session_start();
-require_once('pgp_functions.php');
-$dbh;
-localConn(); //establish connection
-
-$uid = new_user(); // helper function from pgp_function.php
-$_SESSION["user"] = $uid;
+error_reporting(E_ERROR);
 
 $_SESSION['pretask_start_time'] = time(); //start timer
-
-/* THIS IS SHIT RIGHT NOW FIX THIS LATER
-// Check if new user or if user clicked 'back'
-if (!isset($SESSION['user'])) {
-  $uid = new_user(); // helper function from pgp_function.php
-} else {
-  $uid = $_SESSION['user'];
-}
-$_SESSION["user"] = $uid;
-
-// Check if pretask row for user already exist
-$getUser = fetch_row(find_user($uid));
-$pretaskID = $getUser['pretask_id'];
-if ($pretaskID!= null) {
-  $query = "SELECT * FROM NEW_PRETASK WHERE pretask_id = $pretaskID";
-  $result = query($dbh, $query);
-  $ LOLOL IDK WHAT I'M DOING*/
 
 ?>
 
@@ -128,7 +106,7 @@ if ($pretaskID!= null) {
 	<!-- BEGIN QUIZ QUESTIONS -->
 
 	<h2>Questions about personal genomics</h2>
-	<form id="pretask" method="POST" action="v1.php">
+	<form id="pretask" method="POST" action="pretask_process.php">
 	<!-- INCLUDE FORWARD / BACK BUTTONS LATER -->
 
 	<ol><li><b>True or False: Your genes determine everything about you and your future.</b><br>
