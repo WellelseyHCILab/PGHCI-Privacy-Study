@@ -47,7 +47,7 @@ $_SESSION['mturk_id'] = $mturk_id;*/
 
 	<head>
 
-		<title>Privacy Index</title>
+		<title>PGHCI: Privacy Index</title>
 
 		<!--jQuery & vis.js-->
 		<script type="text/javascript" charset="utf8" src="scripts/jquery/jquery-1.10.2.js"></script>
@@ -65,7 +65,7 @@ $_SESSION['mturk_id'] = $mturk_id;*/
 	<div class="navbar navbar-fixed-top navbar-inverse">
 	<div class="navbar-inner">
 		<div class="container">
-			<span class="brand"><img src="assets/img/dna.png"> Privacy Index</span>
+   <span class="brand"><img src="assets/img/dna.png"> PGHCI: Privacy Index</span>
 		</div>
 	</div>
 	</div>
