@@ -73,7 +73,7 @@ $_SESSION['mturk_id'] = $mturk_id;*/
 		
             <h3>Consent Form Opinion</h3> 
             <ol>
-                <li> <label for="consent_opin_q1"><p><strong>I was confident in the questions I just answered, questions 1-15</strong></p></label></li>
+                <li> <label for="consent_opin_q1"><p><strong>I am confident in my response to the questions I just answered, questions 1-15</strong></p></label></li>
                     <label class="radio" for="consent_opin_q1_A">
                     <input type="radio" name="consent_opin_q1" id="consent_opin_q1_A" value="true">Strongly Disagree</label>
                     <label class="radio" for="consent_opin_q1_B">
@@ -149,7 +149,7 @@ $_SESSION['mturk_id'] = $mturk_id;*/
                 <li><label for="consent_opin_q8"><p><strong>Please describe what you liked <em>least</em> about the consent form presented here:</strong></p></label></li>
                 	<textarea name="consent_opin_q8" id="consent_opin_q8" cols="100" rows="5"></textarea>
 
-                
+
                  <li><label for="consent_opin_q9"><p><strong>Please rank the following risks between 1-12 where 1 is the risk you are <strong>most</strong> concerned about and 12 is the risk you are <strong>least</strong> concerned about.</strong></p></label></li>    
                      <table>
                         <tr><td id="unrankedColumnLabel"><i>Drag each item to the right column to rank</i></td><td id="rankColumnLabel">Ranking</td></tr>
