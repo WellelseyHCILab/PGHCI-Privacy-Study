@@ -39,15 +39,15 @@ $_SESSION['mturk_id'] = $mturk_id;*/
 ?>
 
 <!DOCTYPE>
-	<!--Wellesley HCI PGP summer 2014
-	updated by Claire A. Cerda
-	Privacy index 
+	<!--Wellesley HCI PGP fall 2014
+	updated by MaryBeth Kerry and Joanna Bi
+	Self Efficacy 
 	-->
 <html>
 
 	<head>
 
-		<title>Privacy Index</title>
+		<title>PGHCI: Self Efficacy Scale</title>
 
 		<!--jQuery & vis.js-->
 		<script type="text/javascript" charset="utf8" src="scripts/jquery/jquery-1.10.2.js"></script>
@@ -65,7 +65,7 @@ $_SESSION['mturk_id'] = $mturk_id;*/
 	<div class="navbar navbar-fixed-top navbar-inverse">
 	<div class="navbar-inner">
 		<div class="container">
-			<span class="brand"><img src="assets/img/dna.png"> Privacy Index</span>
+   <span class="brand"><img src="assets/img/dna.png"> PGHCI: Self Efficacy Scale</span>
 		</div>
 	</div>
 	</div>
