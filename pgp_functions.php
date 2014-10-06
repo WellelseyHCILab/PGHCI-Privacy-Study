@@ -63,7 +63,7 @@ function user_exists($user) {
 // finds user in database
 function find_user($user) {
 	global $dbh;
-	$query = "SELECT * FROM NEW_USER WHERE id=?";
+	$query = "SELECT * FROM users WHERE id=?";
 	return $result = prepared_query($dbh, $query, array($user));
 }
 
@@ -75,7 +75,7 @@ function ip_exists($ip) {
 // return user row with ip address $ip
 function find_user_with_ip($ip) {
 	global $dbh;
-	$query = "SELECT ip FROM NEW_USER WHERE ip=?";
+	$query = "SELECT ip FROM users WHERE ip=?";
 	return $result = prepared_query($dbh, $query, array(inet_pton($ip)));
 }
 

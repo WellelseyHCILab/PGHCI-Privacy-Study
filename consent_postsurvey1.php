@@ -46,9 +46,8 @@ $_SESSION['mturk_id'] = $mturk_id;*/
 
 	<head>
 
-		<!--jQuery & vis.js-->
+		<!--jQuery-->
 		<script type="text/javascript" charset="utf8" src="scripts/jquery/jquery-1.10.2.js"></script>
-		<script type="text/javascript" charset="utf8" src="scripts/vis.js"></script>
 	
 		<!-- jQuery UI -->
 	        <link rel="stylesheet" type="text/css" href="scripts/jquery/jquery-ui-1.10.4.custom/css/smoothness/jquery-ui-1.10.4.custom.css" rel="stylesheet">
@@ -60,7 +59,7 @@ $_SESSION['mturk_id'] = $mturk_id;*/
 	</head>
 	<body>
 	<div class="container" id="compQuestions">
-	<form id="demo_form" method="POST" action=/~hcilab/pghci_privacy/PGHCI-Privacy-Study/privacyindex2.php><ol> <!--CHECK THIS, J.-->
+	<form id="consent_q" method="POST" action=/~hcilab/pghci_privacy/PGHCI-Privacy-Study/privacyindex2.php><ol> <!--CHECK THIS, J.-->
 		
             <h3>Comprehension Questions</h3> 
             <ol>
@@ -180,11 +179,11 @@ $_SESSION['mturk_id'] = $mturk_id;*/
                     <label class="checkbox" for="consent_comp_q14_A">
                     <input type="checkbox" name="consent_comp_q14" id="consent_comp_q14_A" value="true">Discovering that you are related to a criminal</label>
                     <label class="checkbox" for="consent_comp_q14_B">
-                    <input type="checkbox" name="consent_comp_q13" id="consent_comp_q14_B" value="true">Discovering that your child has an increased risk of developing a disease</label>
+                    <input type="checkbox" name="consent_comp_q14" id="consent_comp_q14_B" value="true">Discovering that your child has an increased risk of developing a disease</label>
                     <label class="checkbox" for="consent_comp_q14_C">
-                    <input type="checkbox" name="consent_comp_q13" id="consent_comp_q14_C" value="true">Misinterpretation of results</label>  
+                    <input type="checkbox" name="consent_comp_q14" id="consent_comp_q14_C" value="true">Misinterpretation of results</label>  
                     <label class="checkbox" for="consent_comp_q14_D">
-                    <input type="checkbox" name="consent_comp_q13" id="consent_comp_q14_D" value="true">Employment, financial, or insurance discrimination</label>       
+                    <input type="checkbox" name="consent_comp_q14" id="consent_comp_q14_D" value="true">Employment, financial, or insurance discrimination</label>       
                    
                 <li> <label for="consent_comp_q15"><p><strong>True or False: If you participate in the HCIPGP Phase 2 study and learn from your genetic data that you need increased medical care, the study will cover the cost of clinical follow-ups.</strong></p></label></li>
                     <label class="radio" for="consent_comp_q15_A">

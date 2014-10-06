@@ -2,8 +2,40 @@
     session_start();
     error_reporting(E_ERROR);
 
-$_SESSION['privacyQ_start_time'] = time(); //start timer
+        $_SESSION['demograph_start_time'] = time(); //start timer
+/*   
+        //generate random code for the thankyou page
+        function randomCode($length = 5) {
+                $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+                $code = '';
+                for ($i = 0; $i < $length; $i++) {
+                   $code .= $chars[rand(0, strlen($chars) - 1)];
+                }
+                return $code;
+        }
 
+        //array to hold random codes without duplicates (up to 1000 elements)
+        $total = 0;
+        $allCodes = array();
+        while($total < 1000) {
+             for ($i=0; $i < 1000 - $total; $i++ ) {
+                 $allCodes[] = "code-" . randomCode();
+             }
+             $allCodes = array_unique($allCodes);
+             $total = count($allCodes);
+        }
+
+//Make sure no duplicate mturk ids
+require_once('pgp_functions.php');
+$dbh;
+localConn(); //establish connection
+
+$mturk_id = randomCode();
+while (mturk_id_exists($mturk_id)) {
+  $mturk_id = randomCode();
+}
+$_SESSION['mturk_id'] = $mturk_id;*/
+        
 ?>
 
 <!DOCTYPE>
@@ -18,7 +50,7 @@ $_SESSION['privacyQ_start_time'] = time(); //start timer
 
 		<link href="styles/bootswatch.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="styles/style.css">
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
 	    <script type="text/javascript" charset="utf8" src="scripts/consentTask.js"></script>
 
        <script> 

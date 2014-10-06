@@ -43,17 +43,39 @@ function checkboxes_someChecked(form) {
 function textareas_allFilled(form) {
     var checked = true;
     var texAreaNames = [];
-    $("#" + form + " :textarea").each(function() {
+     $( document.getElementsByTagName( "textarea" ) ).each(function() {
         var name = $(this).attr("name");
         if (texAreaNames.indexOf(name) < 0) texAreaNames.push(name);
     });
-   console.debug(texAreaNames);
-    /*$.each(texAreaNames, function(key, value) {
-        //console.debug(key+"  "+value+" "+$("input:checkbox[name='" + value + "']").is(":checked"));
-        var valChecked = $.trim(("input:textarea[name='" + value + "']").val());
-        checked = checked && valChecked;
+   //console.debug(texAreaNames);
+    $.each(texAreaNames, function(key, value) {
+        var valChecked = !$.trim($(document.getElementsByName(value))[0].value);
+        console.debug(key+" "+value+" "+valChecked);
+        checked = checked && !valChecked;
     });
-    return checked;*/
+    return checked;
+}
+
+//check that all items on rank lists have been ranked
+function ranklist_allRanked()
+{
+    var whitespace = new RegExp("\\s", "g");
+
+    var q9data = "";
+    $("#ranked_q9 li").each(function(i, el){
+        var p = $(el).text().toLowerCase().replace(whitespace, "_");
+        q9data += p+"="+$(el).index()+",";
+    });
+    console.debug(q9data.slice(0, -1));
+    $("consent_q > [name='consent_opin_q9']").val(q9data.slice(0, -1));
+
+    var q10data = "";
+    $("#ranked_q10 li").each(function(i, el){
+        var p = $(el).text().toLowerCase().replace(whitespace, "_");
+        q10data += p+"="+$(el).index()+",";
+    });
+    console.debug(q10data.slice(0, -1));
+    $("consent_q > [name='consent_opin_q10']").val(q10data.slice(0, -1));
 }
 
 // Update pop-up validation message
@@ -71,12 +93,13 @@ function validateForm_consent(submit, form, container) {
         if (container.find($("#exitBtn")).size() === 0) {
             container.append(closeBtn);
         }
+
+        ranklist_allRanked();//put ranking data into form
         //Check if form was filled out appropriately
         var rd_allChecked = radio_allChecked($(form).attr('id'));
         console.debug("radioButtons: "+rd_allChecked);
         //r unrankedList = $(form).find("unranked_q9");
         //r rankedList9_filled = unrankedList.children.length == 0;
-        var textarea = $(form).find("textarea");
         var textarea_filled = textareas_allFilled($(form).attr('id'));
         console.debug("text areas: "+textarea_filled);
 

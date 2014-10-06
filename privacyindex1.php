@@ -1,5 +1,6 @@
 <?php
 session_start();
+error_reporting(E_ERROR);
 require_once('pgp_functions.php');
 $dbh;
 localConn(); //establish connection

@@ -46,9 +46,8 @@ $_SESSION['mturk_id'] = $mturk_id;*/
 
 	<head>
 
-		<!--jQuery & vis.js-->
+		<!--jQuery-->
 		<script type="text/javascript" charset="utf8" src="scripts/jquery/jquery-1.10.2.js"></script>
-		<script type="text/javascript" charset="utf8" src="scripts/vis.js"></script>
 	
 		<!-- jQuery UI -->
 	        <link rel="stylesheet" type="text/css" href="scripts/jquery/jquery-ui-1.10.4.custom/css/smoothness/jquery-ui-1.10.4.custom.css" rel="stylesheet">
@@ -59,9 +58,39 @@ $_SESSION['mturk_id'] = $mturk_id;*/
         <link rel="stylesheet" type="text/css" href="styles/style_consentquestions.css">
 		
     <script>
+      var q9data = "";
+      var q10data = "";
       $(function() {
-        $( "#unranked_q9, #unranked_q10, #ranked_q9, #ranked_q10" ).sortable({
+        $( "#unranked_q9, #unranked_q10").sortable({
           connectWith: ".connectedSortable"
+        }).disableSelection();
+
+        $( "#ranked_q9").sortable({
+          connectWith: ".connectedSortable"/*,
+          change: function(event, ui) {
+                q9data = "";
+
+                $("#ranked_q9 li").each(function(i, el){
+                    var p = $(el).text().toLowerCase().replace(" ", "_");
+                    q9data += p+"="+$(el).index()+",";
+                });
+                console.debug(q9data.slice(0, -1));
+                $("consent_q > [name='consent_opin_q9']").val(q9data.slice(0, -1));
+            }*/
+        }).disableSelection();    
+
+         $( "#ranked_q10").sortable({
+          connectWith: ".connectedSortable"/*,
+          change: function(event, ui) {
+                q10data = "";
+
+                $("#ranked_q10 li").each(function(i, el){
+                    var p = $(el).text().toLowerCase().replace(" ", "_");
+                    q10data += p+"="+$(el).index()+",";
+                });
+                console.debug(q10data.slice(0, -1));
+                $("consent_q > [name='consent_opin_q10']").val(q10data.slice(0, -1));
+            }*/
         }).disableSelection();      
       });
     </script>
@@ -69,7 +98,7 @@ $_SESSION['mturk_id'] = $mturk_id;*/
 	</head>
 	<body>
 	<div class="container" id="compQuestions">
-	<form id="demo_form" method="POST" action=/~hcilab/pghci_privacy/PGHCI-Privacy-Study/privacyindex2.php><ol> <!--CHECK THIS, J.-->
+	<form id="consent_q" method="POST" action=/~hcilab/pghci_privacy/PGHCI-Privacy-Study/privacyindex2.php><ol> <!--CHECK THIS, J.-->
 		
             <h3>Consent Form Opinion</h3> 
             <ol>
@@ -151,6 +180,7 @@ $_SESSION['mturk_id'] = $mturk_id;*/
 
 
                  <li><label for="consent_opin_q9"><p><strong>Please rank the following risks between 1-12 where 1 is the risk you are <strong>most</strong> concerned about and 12 is the risk you are <strong>least</strong> concerned about.</strong></p></label></li>    
+                     <input name="consent_opin_q9" value="" type="hidden" />
                      <table>
                         <tr><td id="unrankedColumnLabel"><i>Drag each item to the right column to rank</i></td><td id="rankColumnLabel">Ranking</td></tr>
                         <td>
@@ -174,6 +204,7 @@ $_SESSION['mturk_id'] = $mturk_id;*/
 
                     <p></p>
                   <li><label for="consent_opin_q10"><p><strong>Please rank the following benefits between 1-7 where 1 provides the <strong>greatest benefit</strong> and 7 provides the <strong>least</strong> benefit.</strong></p></label></li>   
+                      <input name="consent_opin_q10" value="" type="hidden" />
                      <table>
                         <tr><td id="unrankedColumnLabel"><i>Drag each item to the right column to rank</i></td><td id="rankColumnLabel">Ranking</td></tr>
                         <td>
