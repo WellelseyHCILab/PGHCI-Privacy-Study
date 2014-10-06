@@ -51,10 +51,19 @@ $_SESSION['mturk_id'] = $mturk_id;*/
 		<link href="styles/bootswatch.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="styles/style.css">
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-	   <script> 
+	    <script type="text/javascript" charset="utf8" src="scripts/consentTask.js"></script>
+
+       <script> 
             $(function(){
               $("#compQuestions").load("consent_postsurvey1.php"); 
               $("#opinQuestions").load("consent_postsurvey2.php"); 
+            
+            //Form validation
+            var submit_id = $("#Submit_ConsentTask");
+            var form_id = $("#consent_q");
+            var validateWarning = $("#validate_msg");
+
+            validateForm_consent(submit_id,form_id,validateWarning);
             });
         </script> 
     </head>
@@ -181,10 +190,10 @@ $_SESSION['mturk_id'] = $mturk_id;*/
                 
             <label for="consent_q1"></label>
             <label class="radio" for="consent_q1_A">
-                <input type="radio" name="consent_q1_A" id="consent_q1_A" value="consent"><strong>I authorize the use and disclosure of my health information to the parties listed in the
+                <input type="radio" name="consent_q1" id="consent_q1_A" value="consent"><strong>I authorize the use and disclosure of my health information to the parties listed in the
                 authorization.</strong> </label>
             <label class="radio" for="consent_q1_B">
-                <input type="radio" name="consent_q1_B" id="consent_q1_B" value="do not consent"><strong>I decline to participate in this study</strong>
+                <input type="radio" name="consent_q1" id="consent_q1_B" value="do not consent"><strong>I decline to participate in this study</strong>
             </label>
 
             <hr />
@@ -199,7 +208,7 @@ $_SESSION['mturk_id'] = $mturk_id;*/
             <input class="btn btn-primary submit-survey" type="submit" name="Submit" value="Continue" id="Submit_ConsentTask">
         </form>
 
-
+        <div class="alert alert-block" id='validate_msg'></div>
 	</div>
 		
 	</body>
