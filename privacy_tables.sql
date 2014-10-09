@@ -1,5 +1,3 @@
--- make sure all the questions match up
-
 use pghci_privacy;
 
 drop table if exists users;
@@ -15,16 +13,16 @@ drop table if exists demographics;
 -- create the user table
 create table users(
 	id varchar(50) not null primary key,
-	pi1_id int not null, -- privacy index
-	pi2_id int not null,
-	pi3_id int not null,
-	es_id int not null, -- efficacy scale
-	pretask_id int not null, -- pretask questions
-	vis_id int not null, -- vis questions
-	privacy_id int not null, -- privacy questions
-	dem_id int not null, -- demographics
-	ip varchar(50) not null,
-	total_time int not null
+	pi1_id int, -- privacy index
+	pi2_id int,
+	pi3_id int,
+	es_id int, -- efficacy scale
+	pretask_id int, -- pretask questions
+	vis_id int, -- vis questions
+	privacy_id int, -- privacy questions
+	dem_id int, -- demographics
+	ip varchar(50),
+	total_time int
 	)
 	ENGINE = InnoDB;
 
@@ -38,7 +36,7 @@ create table privacy_index1(
 	q4 varchar(20) not null,
 	q5 varchar(20) not null,
 	q6 varchar(20) not null,
-	total_time int not null
+	total_spent int not null
 	)
 	ENGINE = InnoDB;
 
@@ -52,7 +50,7 @@ create table privacy_index2(
 	q4 varchar(20) not null,
 	q5 varchar(20) not null,
 	q6 varchar(20) not null,
-	total_time int not null
+	total_spent int not null
 	)
 	ENGINE = InnoDB;
 
@@ -138,7 +136,7 @@ create table visQ(
 create table privacyQ(
 	privacy_id int auto_increment not null primary key,
         user_id varchar(50) not null,
-	signature enum('authorize','decline') not null,
+	signature enum('consent','do no consent') not null,
 	explanation varchar(1000) not null,
 	q1 enum('true','false') not null,
 	q2 enum('true','false') not null,
@@ -151,19 +149,19 @@ create table privacyQ(
         q4_c varchar(100) not null,
         q4_d varchar(100) not null,
 	q5 enum('true','false') not null,
-	q6_a char(20) not null,
-        q6_b char(20) not null,
-        q6_c char(20) not null,
-        q6_d char(20) not null,
-	q6_e char(20) not null,
-	q7 enum('a','b','c','d') not null,
-	q8 enum('a','b','c','d') not null,
+	q6_a varchar(20) not null,
+        q6_b varchar(20) not null,
+        q6_c varchar(20) not null,
+        q6_d varchar(20) not null,
+	q6_e varchar(20) not null,
+	q7 enum('A','B','C','D') not null,
+	q8 enum('A','B','C','D') not null,
 	q9 enum('true','false') not null,
 	q10_a varchar(100) not null,
         q10_b varchar(100) not null,
         q10_c varchar(100) not null,
         q10_d varchar(100) not null,	
-	q11 enum('a','b','c','d') not null,
+	q11 enum('A','B','C','D') not null,
 	q12_a varchar(100) not null,
         q12_b varchar(100) not null,
         q12_c varchar(100) not null,
@@ -179,11 +177,11 @@ create table privacyQ(
     	q18 varchar(20) not null,
     	q19 varchar(20) not null,
     	q20 varchar(20) not null,
-	q21 enum('a','b','c','d') not null,
+	q21 enum('A','B','C','D') not null,
 	q22 varchar(1000),
         q23 varchar(1000),
-	-- q24 (ranking question how the fuck do you do this
-	-- q25 (there are two of them)
+	q24 varchar(1000),
+	q25 varchar(1000),
 	time_spent int not null
 	)
 	ENGINE = InnoDM;
@@ -197,7 +195,7 @@ create table demographics(
 	q3 char(20),
 	q4 enum('yes','no'),
 	q5 enum('yes','no'),
-	q5 varchar(30),
+	q6 varchar(30),
 	time_spent int
 	)
 	ENGINE = InnoDB;

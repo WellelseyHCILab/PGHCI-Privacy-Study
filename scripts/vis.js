@@ -54,13 +54,13 @@ function validateForm_vis(submit, form, container) {
             container.append(closeBtn);
         }
         //Check if form was filled out appropriately
-        var txt_allInts = text_allInts($(form).attr('id'));
+       // var txt_allInts = text_allInts($(form).attr('id'));
         var rd_allChecked = radio_allChecked($(form).attr('id'));
         var textarea = $(form).find("textarea");
         var textarea_filled = textarea.length === 0 ? true : textarea.val().length > 0;
         var onlyError = "Please answer all the survey questions to continue.";
         var onlyError_none = textInContainer(onlyError);
-        if (txt_allInts && rd_allChecked && textarea_filled) {
+        if (rd_allChecked && textarea_filled) {
             form.submit();
         } else {
 			container.append(onlyError+"<p>");

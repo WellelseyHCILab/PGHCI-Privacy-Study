@@ -50,7 +50,7 @@ function textareas_allFilled(form) {
    //console.debug(texAreaNames);
     $.each(texAreaNames, function(key, value) {
         var valChecked = !$.trim($(document.getElementsByName(value))[0].value);
-        console.debug(key+" "+value+" "+valChecked);
+        //console.debug(key+" "+value+" "+valChecked);
         checked = checked && !valChecked;
     });
     return checked;
@@ -60,22 +60,28 @@ function textareas_allFilled(form) {
 function ranklist_allRanked()
 {
     var whitespace = new RegExp("\\s", "g");
-
+    var q9_count = 0;
     var q9data = "";
     $("#ranked_q9 li").each(function(i, el){
         var p = $(el).text().toLowerCase().replace(whitespace, "_");
         q9data += p+"="+$(el).index()+",";
+        q9_count = q9_count + 1;
     });
     console.debug(q9data.slice(0, -1));
-    $("consent_q > [name='consent_opin_q9']").val(q9data.slice(0, -1));
+     $( document.getElementsByName( "consent_opin_q9")).val(q9data.slice(0, -1));
 
+    var q10_count = 0;
     var q10data = "";
     $("#ranked_q10 li").each(function(i, el){
         var p = $(el).text().toLowerCase().replace(whitespace, "_");
         q10data += p+"="+$(el).index()+",";
+        q10_count = q10_count + 1;
     });
     console.debug(q10data.slice(0, -1));
-    $("consent_q > [name='consent_opin_q10']").val(q10data.slice(0, -1));
+    $( document.getElementsByName( "consent_opin_q10")).val(q10data.slice(0, -1));
+
+    console.debug("q10 has: "+q10_count+", q9 has: "+q9_count);
+    return q9_count == 12 && q10_count == 7;
 }
 
 // Update pop-up validation message
@@ -85,30 +91,31 @@ function updateWarningText(container, text) {
 }
 
 // Form validation
-function validateForm_consent(submit, form, container) {
-    var closeBtn = "<div id='exitBtn'>X</div>";
-    container.hide();
-    submit.click(function(event) {
-        event.preventDefault();
+function validateForm_consent() {
+        var container = $("#validate_msg");
+        var closeBtn = "<div id='exitBtn'>X</div>";
+      
         if (container.find($("#exitBtn")).size() === 0) {
             container.append(closeBtn);
         }
 
-        ranklist_allRanked();//put ranking data into form
         //Check if form was filled out appropriately
-        var rd_allChecked = radio_allChecked($(form).attr('id'));
+        var ranked = ranklist_allRanked();//also puts ranking data into form
+        console.debug("ranked: "+ranked);
+
+        var rd_allChecked = radio_allChecked('consent_q');
         console.debug("radioButtons: "+rd_allChecked);
-        //r unrankedList = $(form).find("unranked_q9");
-        //r rankedList9_filled = unrankedList.children.length == 0;
-        var textarea_filled = textareas_allFilled($(form).attr('id'));
+    
+        var textarea_filled = textareas_allFilled('consent_q');
         console.debug("text areas: "+textarea_filled);
 
-        var ck_someChecked = checkboxes_someChecked($(form).attr('id'));
+        var ck_someChecked = checkboxes_someChecked('consent_q');
         console.debug("checkboxes: "+ck_someChecked);
 
         var onlyError = "Please answer all the survey questions to continue.";
         var onlyError_none = textInContainer(onlyError);
-        if (ck_someChecked && rd_allChecked && textarea_filled) {
+        if (ranked && rd_allChecked && textarea_filled) {
+           // return false;
             form.submit();
         } else {
 			container.append(onlyError+"<p>");
@@ -124,5 +131,7 @@ function validateForm_consent(submit, form, container) {
             });
 
         }
-    });
+
+        return false;
+    //});
 }

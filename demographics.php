@@ -58,7 +58,7 @@
 			</label>
 
 		<label for="age"> <strong>How old are you?</strong> </label>
-		<input type="number" name="q2" id="age" style="height:30px;" required>
+		<input type="number" name="q2" id="age" min="1" max="130" style="height:30px;" required>
 
 		<p><strong>Highest level of education:</strong></p>
 			<select name="q3">

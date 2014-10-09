@@ -62,8 +62,15 @@ $_SESSION['mturk_id'] = $mturk_id;*/
             var submit_id = $("#Submit_ConsentTask");
             var form_id = $("#consent_q");
             var validateWarning = $("#validate_msg");
+            
 
-            validateForm_consent(submit_id,form_id,validateWarning);
+           var closeBtn = "<div id='exitBtn'>X</div>";
+            validateWarning.hide();
+            if (validateWarning.find($("#exitBtn")).size() === 0) {
+                validateWarning.append(closeBtn);
+            }
+    
+            //validateForm_consent(validateWarning);
             });
         </script> 
     </head>
@@ -118,7 +125,7 @@ $_SESSION['mturk_id'] = $mturk_id;*/
         <ol>
             <h3><li>How can I participate?</li></h3>
                 <p>Participation in this study involves (1) providing your trait data and genetic data to the HCIPGP private online database, and (2) consenting to the use of this data for research purposes.  Your data will be used indefinitely, unless you choose to withdraw from the study.</p>
-                <p><i>Trait Data: </i>Trait data will be collected either by online survey, an interview, or both.  The survey will take approximately 1-3 hours.  The interview will take approximately  hour and may be conducted either in-person or remotely.  Upon completion of the survey, your data will be saved to the HCIPGP private online database.  The trait data that is collected may include, but is not limited to: date of birth, medications, vaccines, diseases, personal and familial medical history, race, ethnicity, vital signs, and lifestyle traits.</p>
+                <p><i>Trait Data: </i>Trait data will be collected either by online survey, an interview, or both.  The survey will take approximately 1-3 hours.  The interview will take approximately an hour and may be conducted either in-person or remotely.  Upon completion of the survey, your data will be saved to the HCIPGP private online database.  The trait data that is collected may include, but is not limited to: date of birth, medications, vaccines, diseases, personal and familial medical history, race, ethnicity, vital signs, and lifestyle traits.</p>
                 <p><i>Genetic Data: </i>You will be sent materials for an at-home saliva collection.  This kit is self-administered, and typically requires you to provide 2-4 milliliters of your saliva.  You will then send the saliva sample back to the laboratory in the prepaid package that is provided for you.  Your genome will then be sequenced and analyzed in the lab.  Your genomic data will be saved to the HCIPGP private online database and a copy of the results will be sent to you.</p>
             <h3><li>Will I be compensated?</li></h3>
                 <p>You will not be compensated for your participation in the HCIPGP study.  In the event that your genetic data contributes to a discovery, neither you nor your family will receive any financial benefits.  You will also not be compensated for any lost time as a result of the HCIPGP study.</p>
@@ -148,7 +155,7 @@ $_SESSION['mturk_id'] = $mturk_id;*/
                         <p>By learning more about your risk of developing certain diseases (for example Alzheimer's disease, cancer) you and those with whom you share this information will be able to better plan for the future.  You or a family member may need to take preventative measures or plan for an increased need for care in the future.  The ability to predict this ahead of time may be beneficial to you and your family.</p>  
                     <li><p><strong><i>Reduce genetic discrimination</i></strong></p></li> 
                         <p>Current state and federal regulations protect individuals from employment and insurance discrimination based on their genomic information. One existing law is the Genetic Information Nondiscrimination Act (GINA). As more people get genomic testing and share their genomic data, the need and pressure to strengthen such laws grows. </p> 
-                        <p>For genetic rights currently addressed by the GINA act, see <a href="http://www.eeoc.gov/laws/types/genetic.cfm">http://www.eeoc.gov/laws/types/genetic.cfm</a></p>   
+                        <p>For genetic rights currently addressed by the GINA act, see <a href="http://www.eeoc.gov/laws/types/genetic.cfm" target="_blank">http://www.eeoc.gov/laws/types/genetic.cfm</a></p>   
                 </ul>
             <h3><li>What are the risks of participating?</li></h3>
                 <p>There are some potential risks to participating in the HCIPGP research study.  Please read each of the risks carefully before deciding whether or not to participate.</p> 
@@ -172,21 +179,21 @@ $_SESSION['mturk_id'] = $mturk_id;*/
                     <li><p><strong><i>Identifiability</i></strong></p></li> 
                         <p>Your name will not be associated with your genomic data if shared with researchers or in the private database. However, your genomic information is unique to you and is therefore identifiable as your own.  Some of your trait information may also be identifiable as your own.  Though it is unlikely, it may be possible that one or more third parties to identify you based on this data.  Identification may result in the loss of privacy.</p>
                     <li><p><strong><i>Links to Ongoing or Unsolved Criminal Investigations</i></strong></p></li> 
-                        In the future, U.S. law enforcement agencies may be able to audit or subpoena genomic data, including data that identifies you, such as your name or contact information.  Your genomic data could be used to correctly or incorrectly link you and/or your relatives with ongoing or unsolved criminal investigations on the basis of your publicly available genetic data.
+                        <p>In the future, U.S. law enforcement agencies may be able to audit or subpoena genomic data, including data that identifies you, such as your name or contact information.  Your genomic data could be used to correctly or incorrectly link you and/or your relatives with ongoing or unsolved criminal investigations on the basis of your publicly available genetic data.</p>
                     <li><p><strong><i>Genetic discrimination</i></strong></p></li> 
                         <p>Though unlikely, your data may be accessed and linked to you through legal or illegal means.  This may result in genetic discrimination that could affect you or your family's ability to get or maintain life insurance, disability insurance, and/or long term care insurance.  The Genetic Information Nondiscrimination Act (GINA) prevents genetic discrimination in the context of health insurance and employment, however life insurance, disability insurance, and long term care insurance are not currently protected by GINA</p>       
                 </ul>
             <h3><li>Can I withdraw my data from HCIPGP research?</li></h3>
                 <p>You may withdraw your data from the HCIPGP research at any time.  However, if your data has already been used in a study, it cannot be withdrawn from the study.</p>
             <h3><li>Who can I contact if I have questions?</li></h3> 
-                <p>If you have any questions or concerns about the HCIPGP study, please contact us at XX@xxx.xxx</p>
+                <p>If you have any questions or concerns about the HCIPGP study, please contact us at hcilab@wellesley.edu</p>
             <h3><li>CONSENT</li></h3> 
                 <p>I have read this consent form.  All my questions about the study and my part in it have been answered.  I freely consent to be in this research study.</p>
                 <p>I have not given up any of my legal rights.</p>
                 <p>I authorize the use and disclosure of my health information to the parties listed in the authorization</p>
         </ol>
 
-        <form action="consent_process.php" method="post" id="consent_q">
+        <form action="consent_process.php" onsubmit="return validateForm_consent()" method="post" id="consent_q">
                 
             <label for="consent_q1"></label>
             <label class="radio" for="consent_q1_A">

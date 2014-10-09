@@ -11,44 +11,45 @@ require_once('pgp_functions.php');
 $dbh;
 localConn();
 
-// HELPER FUNCTION: Insert new user response from pretask page
+/* HELPER FUNCTIONS */
+
+//Insert new user response from pretask page
 function add_pretask_row($userResponse) {
 	global $dbh;
-	$query = "INSERT INTO NEW_PRETASK VALUES (DEFAULT,?,?,?,?,?,?,?,?)";
+	$query = "INSERT INTO pretaskQ VALUES (DEFAULT,?,?,?,?,?,?,?,?)";
 	return $result = prepared_query($dbh, $query, $userResponse);
 }
 
 // PROCESS DATA
-$id = $_SESSION["user"];
-$ip = $_SERVER["REMOTE_ADDR"]; //documented PHP var
+$user = $_SESSION["user"];
+$ip = $_SERVER["REMOTE_ADDR"];
+
+//$ipUsed = filter_var($ip, FILTER_VALIDATE_IP) ? ip_exists($ip) : true; 
 
 if (!empty($_POST)) {
-	$pretaskResponse = getUserResponse($_POST);
-	$pretaskResponse = array_merge(array($id), $pretaskResponse); //fix array
-	
+  	$pretaskResponse = getUserResponse($_POST);
+	$pretaskResponse = array_merge(array($user), $pretaskResponse);
+
 	// Time stuff
 	$start_time = $_SESSION["pretask_start_time"];
 	$pretask_time = time() - $start_time;
 	array_push($pretaskResponse, $pretask_time);
 	$_SESSION['pretask_time'] = $pretask_time; //for later
-
-	// Filter out used ip's
-	//$ipUsed = filter_var($ip, FILTER_VALIDATE_IP) ? ip_exists($ip) : true; //more concise 'if' clause
-
+	
 	//if (!$ipUsed) {
 		add_pretask_row($pretaskResponse);
 		$pretask_id = mysql_insert_id(); //documented php function
-		$add_user = "INSERT INTO NEW_USER VALUES (?,?,?,?,?,?,?,?,?)";
-		prepared_query($dbh, $add_user, array($id,$pretask_id,NULL,NULL,NULL,NULL,NULL,NULL,NULL));
-		//}
 
-	// Redirect user to a random visualization
-	//$num = mt_rand(1,4); //documented php function
+		// Populate the user table
+		$get_user = fetch_row(find_user($user));
+		
+		$update_user = "UPDATE users SET pretask_id = ? WHERE id = ?";
+		prepared_query($dbh, $update_user, array($pretask_id, $user));
+		echo "got to end of if";
+		//}
+	
+	// Redirect user to thank you page
 	$header = "Location: http://cs.wellesley.edu/~hcilab/pghci_privacy/PGHCI-Privacy-Study/v1.php";
-	/*if ($num == 1) { $header = $header . "v1.php"; }
-	else if ($num == 2) { $header = $header . "v2.php"; }
-	else if ($num == 3) { $header = $header . "v3.php"; }
-	else { $header = $header . "v4.php"; }*/
    	header($header); //redirects user
 	exit();
 }

@@ -34,8 +34,10 @@ function getUserResponse($postArray) {
 	foreach ($_POST as $key => $entry) {
 	  echo $key . "->" . $entry . "<br>";
 	  array_push($userResponse, secure_val($entry));
+	  echo count($userResponse);
 	}
 	//array_pop($userResponse); //removes submit from array
+	echo count($userResponse);
 	return $userResponse;
 }
 
@@ -51,7 +53,9 @@ function new_user() {
 		$exists = user_exists($user);
 	}
 	// FOR WELLESLELY STUDENTS ONLY
-	$user = "WELLES_" + $user;
+	//$user = "WELLES_" + $user;
+	echo "user created was:";
+	echo user;
 	return $user;
 }
 
