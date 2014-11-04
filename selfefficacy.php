@@ -14,7 +14,7 @@ $_SESSION['es_start_time'] = time(); //start timer
 
 	<head>
 
-		<title>PGHCI: Self Efficacy Scale</title>
+		<title>PGHCI</title>
 
 		<!--jQuery & vis.js-->
 		<script type="text/javascript" charset="utf8" src="scripts/jquery/jquery-1.10.2.js"></script>
@@ -32,7 +32,7 @@ $_SESSION['es_start_time'] = time(); //start timer
 	<div class="navbar navbar-fixed-top navbar-inverse">
 	<div class="navbar-inner">
 		<div class="container">
-   <span class="brand"><img src="assets/img/dna.png"> PGHCI: Self Efficacy Scale</span>
+   <span class="brand"><img src="assets/img/dna.png"> PGHCI</span><span class="brand" style="float:right;">Section 4/8</span>
 		</div>
 	</div>
 	</div>
@@ -40,8 +40,8 @@ $_SESSION['es_start_time'] = time(); //start timer
 	<div class="container" id="study_wrapper">
 	<form id="demo_form" method="POST" action="efficacy_process.php"><ol> <!--CHECK THIS, J.-->
 				
-		<h2>General Self Efficacy Survey</h2>
-		<p>For this part of the survey, please rate your sense of self efficacy between 1 and 5.  Please answer every question using the full scale provided.</p>
+		<h2>PGHCI Survey Part 4</h2>
+		<p>Please answer every question using the full scale provided.</p>
 		<ol>
 
 		<li><p><strong>I can always manage to solve difficult problems if I try hard enough.</strong></p></li>

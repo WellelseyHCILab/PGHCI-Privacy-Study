@@ -51,28 +51,19 @@ $_SESSION['mturk_id'] = $mturk_id;*/
 		<link href="styles/bootswatch.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="styles/style.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-	    <script type="text/javascript" charset="utf8" src="scripts/consentTask.js"></script>
+	    <script type="text/javascript" charset="utf8" src="../scripts/consentTask.js"></script>
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+        <script src="http://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
 
-       <script> 
-            $(function(){
-              $("#compQuestions").load("consent_postsurvey1.php"); 
-              $("#opinQuestions").load("consent_postsurvey2.php"); 
-            
-            //Form validation
-            var submit_id = $("#Submit_ConsentTask");
-            var form_id = $("#consent_q");
-            var validateWarning = $("#validate_msg");
-            
+        <script src="scripts/accordionConsent.js"></script>
 
-           var closeBtn = "<div id='exitBtn'>X</div>";
-            validateWarning.hide();
-            if (validateWarning.find($("#exitBtn")).size() === 0) {
-                validateWarning.append(closeBtn);
-            }
-    
-            //validateForm_consent(validateWarning);
+        <script src="http://assets.annotateit.org/annotator/v1.1.0/annotator-full.min.js"></script>
+        <link rel="stylesheet" href="http://assets.annotateit.org/annotator/v1.1.0/annotator.min.css">
+        <script type="text/javascript">
+            $(function ($) {
+                $('#study_wrapper').annotator();
             });
-        </script> 
+         </script>
     </head>
 
 	<body>
@@ -80,7 +71,7 @@ $_SESSION['mturk_id'] = $mturk_id;*/
 	<div class="navbar navbar-fixed-top navbar-inverse">
 	<div class="navbar-inner">
 		<div class="container">
-			<span class="brand"><img src="assets/img/dna.png"> PGHCI: Consent Form Task</span><span class="brand" style="float:right;">Section 7/8</span>
+			<span class="brand"><img src="../assets/img/dna.png"> PGHCI: Consent Form Task</span><span class="brand" style="float:right;">Section 7/8</span>
 		</div>
 	</div>
 	</div>
@@ -104,41 +95,50 @@ $_SESSION['mturk_id'] = $mturk_id;*/
             <p>The main scientific goal of the HCIPGP is to link participants' genomic data with trait data.  A trait is a physical or medical characteristic such as eye color or a diagnosis of high blood pressure.  Your genes control some of these traits.  The collection of all of your genes is called your genome.  As part of this project, we will obtain information about your genome and trait data, and store them in a private, anonymized, online database. Researchers at the HCIPGP project and our research partners and collaborators will use your data to link genes with diseases and traits.  Your information may also help scientists learn more about the history of humankind through our genetics.</p>
             <p>Participation in the HCIPGP study may help you to better understand your personal genomic data and may allow you to make more informed decisions about your health as well as your family's.  There are a number of risks and benefits involved in participating in this study that are explained in the remainder of this consent form. </p>
             <p>We hope that you consider participating in HCIPGP research.</p>
+    
+<div id="consent_accordion" class="container">
         
-        <h3>Full Consent Form</h3>
-            <p>This consent form explains:</p>
-            <ol>
-                <li><p><strong>How can I participate?</strong></p></li>
-                <li><p><strong>Will I be compensated?</strong></p></li>
-                <li><p><strong>How will my data be kept private?</strong></p></li>
-                <li><p><strong>Who can access my data?</strong></p></li>
-                <li><p><strong>How will my data be used?</strong></p></li>
-                <li><p><strong>Can the data I receive from participating in the HCIPGP be used for medical purposes?</strong></p></li>
-                <li><p><strong>What are the benefits of participation?</strong></p></li>
-                <li><p><strong>What are the risks of participation?</strong></p></li>
-                <li><p><strong>Can I withdraw my data from HCIPGP research?</strong></p></li>
-                <li><p><strong>Who can I contact if I have questions?</strong></p></li>
-                <li><p><strong>Consent</strong></p></li>
-            </ol>
-
-         <hr />
-        <ol>
-            <h3><li>How can I participate?</li></h3>
+            <h3>1. How can I participate?</h3>
+            <div>
                 <p>Participation in this study involves (1) providing your trait data and genetic data to the HCIPGP private online database, and (2) consenting to the use of this data for research purposes.  Your data will be used indefinitely, unless you choose to withdraw from the study.</p>
                 <p><i>Trait Data: </i>Trait data will be collected either by online survey, an interview, or both.  The survey will take approximately 1-3 hours.  The interview will take approximately an hour and may be conducted either in-person or remotely.  Upon completion of the survey, your data will be saved to the HCIPGP private online database.  The trait data that is collected may include, but is not limited to: date of birth, medications, vaccines, diseases, personal and familial medical history, race, ethnicity, vital signs, and lifestyle traits.</p>
                 <p><i>Genetic Data: </i>You will be sent materials for an at-home saliva collection.  This kit is self-administered, and typically requires you to provide 2-4 milliliters of your saliva.  You will then send the saliva sample back to the laboratory in the prepaid package that is provided for you.  Your genome will then be sequenced and analyzed in the lab.  Your genomic data will be saved to the HCIPGP private online database and a copy of the results will be sent to you.</p>
-            <h3><li>Will I be compensated?</li></h3>
+                <input class="btn btn-primary submit-survey next" name="next" type="button" value="next" onclick="openNextAccordionPanel()">
+            </div>
+
+            <h3>2. Will I be compensated?</h3>
+            <div>
                 <p>You will not be compensated for your participation in the HCIPGP study.  In the event that your genetic data contributes to a discovery, neither you nor your family will receive any financial benefits.  You will also not be compensated for any lost time as a result of the HCIPGP study.</p>
-            <h3><li>How will my data be kept private?</li></h3>
+                <input class="btn btn-primary submit-survey next" name="next" type="button" value="next" onclick="openNextAccordionPanel()">
+            </div>
+
+            <h3>3. How will my data be kept private?</h3>
+            <div>
                 <p>We have taken many measures to make sure that your data is kept confidential and private within the HCIPGP private online database.  Furthermore, researchers who conduct statistical analyses with your full genetic data will not have access to your name, address, or user ID.  On the other hand, researchers who may interview you will have access to your name and contact information; however, they will only have limited access to a small amount of your genetic information.  Only non-identifying information will be published in scientific journals.</p>
-            <h3><li>Who will have access to my data?</li></h3>
+                <input class="btn btn-primary submit-survey next" name="next" type="button" value="next" onclick="openNextAccordionPanel()">
+            </div>
+
+            <h3>4. Who will have access to my data?</h3>
+            <div>    
                 <p>You will have access to your raw genomic data on an online, password-protected account.  Researchers at the HCIPGP project and our research partners and collaborators will have access to your anonymized genomic and trait data in a private, online database.  Your name, contact information, and other personal identifiers will not be associated with your genomic data in this database.  In the future, U.S. law enforcement agencies may also be able to audit or subpoena your genomic data, including data that identifies you, such as your name or contact information.</p>
-             <h3><li>How will my data be used in HCIPGP research?</li></h3>  
+                <input class="btn btn-primary submit-survey next" name="next" type="button" value="next" onclick="openNextAccordionPanel()">
+            </div>
+
+             <h3>5. How will my data be used in HCIPGP research?</h3>  
+             <div>
                 <p>Your anonymized genetic data may be accessed by HCIPGP researchers as well as other research partners and collaborators to study links between human genes, diseases, traits and other characteristics.  This research could be used to better understand the causes of human diseases.  It could also be used to develop better prevention, diagnosis, and treatment options for these diseases.  Such research may further lead to the possibility of treatments or cures that are specific to a patient’s genes.</p>
                 <p>If you choose to participate in this study, you will not be able to decide what type of research your data will be used for.  However, you can withdraw your data completely from this study (see section 9 for more details on withdrawing your data).</p>
-            <h3><li>Can the data I receive from participating in the HCIPGP be used for medical purposes?</li></h3>   
+                <input class="btn btn-primary submit-survey next" name="next" type="button" value="next" onclick="openNextAccordionPanel()">
+            </div>
+
+            <h3>6. Can the data I receive from participating in the HCIPGP be used for medical purposes?</h3>   
+            <div>
                 <p>The data you receive from participating in the HCIPGP should not be used in place of professional medical advice, diagnosis, or treatment. This includes the raw genetic data and any interpretation of this data that you receive from the HCIPGP.  Sharing your genomic information with your doctor can help you make informed decisions about your health. </p>
-            <h3><li>What are the benefits of participation?</li></h3>   
+                <input class="btn btn-primary submit-survey next" name="next" type="button" value="next" onclick="openNextAccordionPanel()">
+            </div>
+
+            <h3>7. What are the benefits of participation?</h3>   
+            <div>
                 <p>There are potential benefits to participating in the HCIPGP research study.  Please read each of the benefits carefully before deciding whether or not to participate.</p>
                 <ul>
                     <li><p><strong><i>Advance Genomics, Science and Health Research</i></strong></p></li>
@@ -157,7 +157,11 @@ $_SESSION['mturk_id'] = $mturk_id;*/
                         <p>Current state and federal regulations protect individuals from employment and insurance discrimination based on their genomic information. One existing law is the Genetic Information Nondiscrimination Act (GINA). As more people get genomic testing and share their genomic data, the need and pressure to strengthen such laws grows. </p> 
                         <p>For genetic rights currently addressed by the GINA act, see <a href="http://www.eeoc.gov/laws/types/genetic.cfm" target="_blank">http://www.eeoc.gov/laws/types/genetic.cfm</a></p>   
                 </ul>
-            <h3><li>What are the risks of participating?</li></h3>
+                <input class="btn btn-primary submit-survey next" name="next" type="button" value="next" onclick="openNextAccordionPanel()">
+            </div>
+
+            <h3>8. What are the risks of participating?</h3>
+            <div>
                 <p>There are some potential risks to participating in the HCIPGP research study.  Please read each of the risks carefully before deciding whether or not to participate.</p> 
                 <ul>
                     <li><p><strong><i>Ambiguous or Erroneous Data</i></strong></p></li> 
@@ -183,15 +187,28 @@ $_SESSION['mturk_id'] = $mturk_id;*/
                     <li><p><strong><i>Genetic discrimination</i></strong></p></li> 
                         <p>Though unlikely, your data may be accessed and linked to you through legal or illegal means.  This may result in genetic discrimination that could affect you or your family's ability to get or maintain life insurance, disability insurance, and/or long term care insurance.  The Genetic Information Nondiscrimination Act (GINA) prevents genetic discrimination in the context of health insurance and employment, however life insurance, disability insurance, and long term care insurance are not currently protected by GINA</p>       
                 </ul>
-            <h3><li>Can I withdraw my data from HCIPGP research?</li></h3>
+                <input class="btn btn-primary submit-survey next" name="next" type="button" value="next" onclick="openNextAccordionPanel()">
+            </div>
+
+            <h3>9. Can I withdraw my data from HCIPGP research?</h3>
+            <div>
                 <p>You may withdraw your data from the HCIPGP research at any time.  However, if your data has already been used in a study, it cannot be withdrawn from the study.</p>
-            <h3><li>Who can I contact if I have questions?</li></h3> 
+                <input class="btn btn-primary submit-survey next" name="next" type="button" value="next" onclick="openNextAccordionPanel()">
+            </div>
+
+            <h3>10. Who can I contact if I have questions?</h3> 
+            <div>
                 <p>If you have any questions or concerns about the HCIPGP study, please contact us at hcilab@wellesley.edu</p>
-            <h3><li>CONSENT</li></h3> 
+                <input class="btn btn-primary submit-survey next" name="next" type="button" value="next" onclick="openNextAccordionPanel()">
+            </div>
+
+            <h3>11. CONSENT</h3>
+            <div> 
                 <p>I have read this consent form.  All my questions about the study and my part in it have been answered.  I freely consent to be in this research study.</p>
                 <p>I have not given up any of my legal rights.</p>
                 <p>I authorize the use and disclosure of my health information to the parties listed in the authorization</p>
-        </ol>
+            
+
 
         <form action="consent_process.php" onsubmit="return validateForm_consent()" method="post" id="consent_q">
                 
@@ -206,8 +223,9 @@ $_SESSION['mturk_id'] = $mturk_id;*/
             <hr />
 
             <label for="consent_q2">Please describe why you would or would not choose to participate in this study.</label>
-                <textarea name="consent_q2" id="consent_q2" cols="100" rows="5"></textarea>
-
+                <textarea name="consent_q2" id="consent_q2" cols="80" rows="5"></textarea>
+            </div>
+            </div>
             <div class="container" id="compQuestions"></div>
             <hr />
              <div class="container" id="opinQuestions"></div>

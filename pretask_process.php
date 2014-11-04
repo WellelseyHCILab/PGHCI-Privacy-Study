@@ -49,7 +49,7 @@ if (!empty($_POST)) {
 		//}
 	
 	// Redirect user to thank you page
-	$header = "Location: http://cs.wellesley.edu/~hcilab/pghci_privacy/PGHCI-Privacy-Study/v1.php";
+	$header = "Location: http://cs.wellesley.edu/~hcilab/pghci_privacy/PGHCI-Privacy-Study/v1_tableless.php";
    	header($header); //redirects user
 	exit();
 }

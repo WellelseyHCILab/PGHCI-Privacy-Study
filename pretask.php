@@ -21,7 +21,7 @@ $_SESSION['pretask_start_time'] = time(); //start timer
 <head>
 	<meta charset='utf-8'>
         <meta name=author content="Joanna Bi">
- 	<title>PGHCI: Training</title>
+ 	<title>Personal Genomic Tutorial</title>
 	
         <!--jQuery & vis.js-->
 	<script type="text/javascript" charset="utf8" src="scripts/jquery/jquery-1.10.2.js"></script>
@@ -51,13 +51,14 @@ $_SESSION['pretask_start_time'] = time(); //start timer
 <div class="navbar navbar-fixed-top navbar-inverse">
     <div class="navbar-inner">
        	<div class="container">
-       		<span class="brand"><img src="assets/img/dna.png"> PGHCI: Training</span>
+       		<span class="brand"><img src="assets/img/dna.png"> Personal Genomic Tutorial</span><span class="brand" style="float:right;">Section 5/8</span>
         </div>
     </div>
 </div>
 
 <div class="container" id="study_wrapper">
 	<!---<p>Please read over the following information carefully. Then complete the quiz below.</p>-->
+	<h2>Personal Genomic Tutorial</h2>
 	<h2>Instructions</h2>
 	<p>Please read the following explanations carefully. Afterwards, you will be asked questions about this information. Please feel free to <strong>revisit this information</strong> while answering the questions.</p>
 	<h2>What is a genome?</h2>

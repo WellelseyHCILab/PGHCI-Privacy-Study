@@ -117,17 +117,7 @@ create table visQ(
 	vis_type varchar(20), -- do we still want the type?
 	q1 int not null,
 	q2 varchar(20) not null,
-	q3 varchar(500) not null,
-	q4 varchar(20) not null,
-	q5 varchar(20) not null,
-	q6_a char(11) not null,
-	q6_b char(11) not null,
-	q6_c char(13) not null,
-	q6_d char(12) not null,
-	q6_e char(8) not null,
-	q6_f char(9) not null,
-	q6_g char(12) not null,
-	q6_h char(11) not null,
+	q3 enum('true','false') not null,
 	time_spent int not null
 	)
 	ENGINE = InnoDM;
@@ -136,7 +126,7 @@ create table visQ(
 create table privacyQ(
 	privacy_id int auto_increment not null primary key,
         user_id varchar(50) not null,
-	signature enum('consent','do no consent') not null,
+	signature varchar(100) not null,
 	explanation varchar(1000) not null,
 	q1 enum('true','false') not null,
 	q2 enum('true','false') not null,
@@ -178,10 +168,10 @@ create table privacyQ(
     	q19 varchar(20) not null,
     	q20 varchar(20) not null,
 	q21 enum('A','B','C','D') not null,
-	q22 varchar(1000),
-        q23 varchar(1000),
-	q24 varchar(1000),
-	q25 varchar(1000),
+	q22 varchar(1000) not null,
+        q23 varchar(1000) not null,
+	q24 varchar(1000) not null,
+	q25 varchar(1000) not null,
 	time_spent int not null
 	)
 	ENGINE = InnoDM;
@@ -190,12 +180,13 @@ create table privacyQ(
 create table demographics(
 	dem_id int auto_increment not null primary key,
 	user_id varchar(50) not null,
-	q1 enum('female','male','other'),
-	q2 int,
-	q3 char(20),
-	q4 enum('yes','no'),
-	q5 enum('yes','no'),
-	q6 varchar(30),
+	q1 varchar(20) not null,
+	q2 int not null,
+	q3 char(20) not null,
+	q4 enum('yes','no') not null,
+	q5 enum('yes','no') not null,
+	q6 varchar(30) not null,
+	q7 varchar(1000),
 	time_spent int
 	)
 	ENGINE = InnoDB;

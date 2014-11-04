@@ -21,7 +21,7 @@ $_SESSION['pi1_start_time'] = time(); //start timer
 
         <head>
 
-                <title>PGHCI: Privacy Index</title>
+                <title>PGHCI</title>
 
                 <!--jQuery & vis.js-->
                 <script type="text/javascript" charset="utf8" src="scripts/jquery/jquery-1.10.2.js"></script>
@@ -39,7 +39,7 @@ $_SESSION['pi1_start_time'] = time(); //start timer
         <div class="navbar navbar-fixed-top navbar-inverse">
         <div class="navbar-inner">
                 <div class="container">
-   <span class="brand"><img src="assets/img/dna.png"> PGHCI: Privacy Index</span>
+   <span class="brand"><img src="assets/img/dna.png"> PGHCI</span><span class="brand" style="float:right;">Section 1/8</span>
                 </div>
         </div>
         </div>
@@ -47,8 +47,8 @@ $_SESSION['pi1_start_time'] = time(); //start timer
         <div class="container" id="study_wrapper">
         <form id="demo_form" method="POST" action="pi1_process.php"><ol> <!--CHECK THIS, J.-->
                                 
-                <h2>Online Privacy Attitude &amp; Behavior Survey</h2>
-                <p>For the first part of the survey, we are interested in your privacy related behavior in general and when online. Please answer every question using the full scale provided.
+                <h2>PGHCI Survey Part 1</h2>
+                <p>Please answer every question using the full scale provided.
                 
                 <h3>Part 1</h3>
                 <ol>

@@ -19,7 +19,7 @@ localConn(); //establish connection
 // Add row to NEW_VIS table
 function add_vis_row($userResponse) {
 	global $dbh;
-	$query = "INSERT INTO visQ VALUES (DEFAULT,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+	$query = "INSERT INTO visQ VALUES (DEFAULT,?,?,?,?,?,?)";
 	return $result = prepared_query($dbh, $query, $userResponse);
 }
 /*
@@ -49,6 +49,7 @@ if (!empty($_POST)) {
         // Fix array length for prepared query
 	$userResponse = array_merge(array($type), getUserResponse($_POST));
 	echo count($userResponse) . "<br>";
+	array_pop($userResponse); //I DON'T NEED THIS FOR ANYTHING ELSE???? I DON'T UNDERSTAND??????
 	$userResponse = array_merge(array($user), $userResponse);
 	echo count($userResponse) . "<br>";
 	$userResponse = array_merge($userResponse, array($vis_time));

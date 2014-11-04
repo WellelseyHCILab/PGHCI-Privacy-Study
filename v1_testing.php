@@ -1,17 +1,4 @@
-<?php
-	session_start();
-	$_SESSION["vis"] = "table";
-	error_reporting(E_ERROR);
 
-        $_SESSION['vis_start_time'] = time(); //start timer
-?>
-<!--
-	v1.php
-	2/21/14
-	Second visualization test for personal genomic project user test
-	for Wellesley College HCI Lab
-
--->
 <!DOCTYPE>
 <html>
 	<head>
@@ -51,7 +38,7 @@
 				//DataTable
 				$('#gnm_table').dataTable( {
 					"bProcessing": true,
-					"sAjaxSource": "hu43860C_GenomeReport.json",
+					"sAjaxSource": "Jamie_short_GenomeReport.json",
 					"aoColumns": [
 						{ "mData": "Variant" },
 						{ "mData": "Clinical Importance Category" },
@@ -102,15 +89,10 @@
 			<div id="accordion">
 				<h3>Glossary of Terms</h3>
 				<div>
-					<p><strong>Potential Effect:</strong></p>
-					 <p>The potential effect of a gene variant describes how it may influence a person’s chances of developing a disease or what medication may work best for them.  A variant can be:
-					 <ul>
-					 <li><strong>pathogenic</strong> (causes disease)</li>
-					 <li><strong>protective</strong> (prevents disease)</li>
-					 <li><strong>pharmacogenetic</strong> (influences the effect of a medication)</li>
-					 <li><strong>benign</strong> (not associated to a disease).</p></li>
-					 </ul> 
-					<p><strong>Clinical Importance</strong></p>
+					 <p><strong>Potential Effect:</strong></p>
+					 <p>The potential effect of a gene variant describes how it may influence a person’s chances of developing a disease or what medication may work best for them.  A variant can be <strong>pathogenic</strong> (causes disease), <strong>protective</strong> (prevents disease), <strong>pharmacogenetic</strong>
+					  (influences the effect of a medication), or <strong>benign</strong> (not associated to a disease).</p>
+					  <p><strong>Clinical Importance</strong></p>
 					<p>Clinical Importance is based on three different variables. <strong>Severity, treatability</strong> and <strong> penetrance</strong>
 					 of the disease associated with the variant. The higher the clinical importance score, the more important it is to discuss with a medical professional.</p>
 					 <ul>
@@ -143,11 +125,11 @@
 				<table id="gnm_table">
 					<thead>
 						<tr>
-							<th class="sorting">Variant</th>
-							<th class="sorting" style="width:110px;">Clinical <br> Importance</th>
-							<th class="sorting">Potential Effect</th>
-							<th class="sorting">Status</th>
-							<th class="sorting" style="width:90px;">Frequency in<br> Population</th>
+							<th >Variant</th>
+							<th style="width:110px;">Clinical <br> Importance</th>
+							<th >Potential Effect</th>
+							<th >Status</th>
+							<th  style="width:90px;">Frequency in<br> Population</th>
 							<th>Summary</th>
 						</tr>
 					</thead>

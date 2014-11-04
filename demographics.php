@@ -33,7 +33,7 @@
 	<div class="navbar navbar-fixed-top navbar-inverse">
 	<div class="navbar-inner">
 		<div class="container">
-			<span class="brand"><img src="assets/img/dna.png"> PGHCI: Demographic Questions</span>
+			<span class="brand"><img src="assets/img/dna.png"> PGHCI: Demographic Questions</span><span class="brand" style="float:right;">Section 8/8</span>
 		</div>
 	</div>
 	</div>
@@ -62,6 +62,7 @@
 
 		<p><strong>Highest level of education:</strong></p>
 			<select name="q3">
+				<option disabled selected> -- select an option -- </option>
 				<option value="some high-school">Some high-school</option>
 				<option value="high-school diploma">High-school diploma</option>
 				<option value="some college">Some college</option>
@@ -86,9 +87,15 @@
 		
 		<label for="language"> <strong>What is your native language?</strong> </label>
 		<input type="textfield" name="q6" id="language" style="height:30px;" required>
-		<p></p>
+	
+		 <label for="q7">Do you have any general feedback about the study you just participated in?</label>
+         <textarea name="q7" id="q7_feedback" cols="100" rows="5"></textarea>
+
+         <p></p>
 		<input type="submit" name="submit" value="Submit" id="submit_demog" class="btn btn-primary submit-survey">
-		</ol></form>
+		</ol>
+
+		</form>
 	</div>
 
 	</body>

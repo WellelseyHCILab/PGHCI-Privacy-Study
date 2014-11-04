@@ -16,7 +16,7 @@ localConn();
 //Insert new user response from pretask page
 function add_demo_row($userResponse) {
 	global $dbh;
-	$query = "INSERT INTO demographics VALUES (DEFAULT,?,?,?,?,?,?,?,?)";
+	$query = "INSERT INTO demographics VALUES (DEFAULT,?,?,?,?,?,?,?,?,?)";
 	return $result = prepared_query($dbh, $query, $userResponse);
 }
 /*
